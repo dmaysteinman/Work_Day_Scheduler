@@ -15,10 +15,15 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: whitesmoke;
+  color: teal;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+
+.lead {
+    text-align: center;
+    font-size: large;
 }
 
 .description{
