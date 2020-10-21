@@ -1,8 +1,12 @@
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
+// THEN the current day is displayed at the top of the calendar 
+
+
 // WHEN I scroll down
 // THEN I am presented with time blocks for standard business hours
+
+
 // WHEN I view the time blocks for that day
 // THEN each time block is color-coded to indicate whether it is in the past, present, or future
 // WHEN I click into a time block
@@ -11,30 +15,23 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
-$(document).ready(function () {
-    //your code here
-  });  
 
 //STEP: Create a timer with date using js
+var currentDay = $("#currentDay");
+let m = moment();
+currentDay.text(m.format("[Today is] dddd[,] MMM Mo[,] YYYY"));
 
-let today = new Date();
-// const currentTime = new Date();
-// const time = today.getHours() + ":" + today.getMinutes();
+var currentTime = $("#currentTime");
+currentTime.text(m.format("[The time is] h:mm:ss a"));
+var update = function() {
+    document.getElementById("currentTime")
+    .innerHTML = moment().format("[The time is] h:mm:ss a");
+}
+setInterval(update, 1000);
 
-let minute = today.getMinutes();
-let hour = today.getHours();
-let month = today.getMonth()+1;
-let day = today.getDate();
-let year = today.getFullYear();
-let container = $(".container")
+var container = $(".container")
 
 
-let date = 
-    (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' + year;
-    document.getElementById("today").textContent=date;
-
-let time = hour + ":" + minute;
-    document.getElementById("time").textContent=time;
 //STEP: create time blocks 
 //THE ARRAY AND FOR LOOP IS TAKEN FROM SHANNON'S VIA 5PM STUDY GROUP
 let hours = ["8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "500pm"];
@@ -59,7 +56,7 @@ for (var i = 0; i < hours.length; i++) {
     //Assign class to middle column
     planCol.attr("class", "col-9");
     //Just to test
-    planCol.text("Test");
+    // planCol.text("Test");
     //Append plan column to the row (which is already appended to container)
     hourRow.append(planCol);
     //Create column for save button

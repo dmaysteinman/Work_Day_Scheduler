@@ -21,10 +21,10 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-#today {
+#currentDay {
     text-align: center;
-    font-size: 50px;
-    padding-top: 20px;
+    font-size: 30px;
+    padding-top: 10px;
 }
 
 .description{
