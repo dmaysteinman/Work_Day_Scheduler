@@ -14,7 +14,7 @@ body {
 }
 
 #currentDay {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 #currentTime {
@@ -29,9 +29,14 @@ body {
 }
 
 .saveBtn {
-  border-left: 1px solid navy;
+  position: absolute;
+  background-color: #093641;
   color: white;
-  background-color: teal;
+  margin-left: 80px;
+}
+.col-3 {
+  margin-top: 30px;
+  font-size: large;
 }
 
 .past {

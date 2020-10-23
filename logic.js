@@ -45,14 +45,12 @@ var container = $(".container")
 //STEP: make them click responsive (change color when clicked?!)
 
 //STEP: make a save button for time blocks that saves in local storage
-$(document).ready(function() {
-    $('#save').append(
-      $(document.createElement('button')).prop({
-        type: 'button',
-        innerHTML: 'Save',
-        class: 'saveBtn'
-      })
-    );
-  });
+var saveBtn = $("<button>")
+saveBtn.attr("type", "button");
+saveBtn.attr("class", "saveBtn");
+saveBtn.text("Save");
+$("#save").append(saveBtn);
+
+
 
 //STEP: make the saved events stay when the page is refreshed
