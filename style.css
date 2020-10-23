@@ -28,7 +28,7 @@ body {
   border: 3px solid #093641;
 }
 
-#saveBtn {
+.saveBtn {
   border-left: 1px solid navy;
   color: white;
   background-color: teal;
