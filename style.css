@@ -2,50 +2,36 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 2;
-}
-
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+  background-color: rgb(238, 236, 234);
 }
 
 .jumbotron {
   text-align: center;
-  background-color: rgb(253, 245, 234);
-  color: #115c6d;
-  border-radius: 0;
-  border-bottom: 10px solid black;
+  background-color: rgb(238, 236, 234);
+  color: #093641;
+  border-bottom: 10px solid #093641;
+  padding-bottom: 10px;
 }
 
 #currentDay {
-    text-align: center;
     font-size: 30px;
-    padding-top: 10px;
 }
 
-.description{
-  white-space: pre-wrap;
-}
-
-.time-block{
-  text-align: center;
-  border-radius: 15px;
+#currentTime {
+  font-size: 20px;
 }
 
 .row {
+  width: auto;
   white-space: pre-wrap;
-  height: 80px;
-  border: 3px solid #115c6d;
+  height: 100px;
+  border: 3px solid #093641;
 }
 
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+#saveBtn {
+  border-left: 1px solid navy;
+  color: white;
+  background-color: teal;
 }
 
 .past {
@@ -61,14 +47,6 @@ textarea{
 .future {
   background-color: #77dd77;
   color: white;
-}
-
-.saveBtn {
-  border-left: 1px solid black;
-  border-radius: 15px;
-  background-color: #115c6d;
-  color: white;
-  margin-top: 15px;
 }
 
 #footer {
