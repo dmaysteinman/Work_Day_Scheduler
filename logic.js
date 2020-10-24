@@ -98,6 +98,7 @@ function init() {
   schedule = JSON.parse(localStorage.getItem("schedule"))
   console.log("schedule = " + schedule)
   for (let i=8; i<=18; i++) {
-    
+    schedule.push(schedule);
   }
+}
 $(init)
