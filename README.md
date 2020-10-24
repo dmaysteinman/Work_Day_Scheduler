@@ -1,53 +1,20 @@
 # Work_Day_Scheduler
-Week 5 Homework
-//THE ARRAY AND FOR LOOP IS TAKEN FROM SHANNON'S VIA 5PM STUDY GROUP
-// let hours = ["8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 noon", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm"];
+# Week 5 Homework
 
-// for (var i = 0; i < hours.length; i++) {
-//     //Create row for each hour of the day
-//     var hourRow = $("<div>");
-//     //Assign row class
-//     hourRow.attr("class", "row");
-//     //Create column for the hour to display in
-//     var hourCol = $("<div>");
-//     //Assign column class
-//     hourCol.attr("class", "col-3");
-//     //Append column to row
-//     hourRow.append(hourCol);
-//     //Set text of column to hour of the day
-//     hourCol.text(hours[i]);
-//     //Append the row to the container
-//     container.append(hourRow);
-//     //Create column for user input, the plan for that hour of the day
-//     var planCol = $("<div>");
-//     //Assign class to middle column
-//     planCol.attr("class", "col-7");
-//     //Append plan column to the row (which is already appended to container)
-//     hourRow.append(planCol);
-//     //Create column for save button
-//     var saveBtnCol = $("<div>");
-//     //Assign class to last column of row
-//     saveBtnCol.attr("class", "col-2");
-//     //Append column to row
-//     hourRow.append(saveBtnCol);
-    //Create save button
-    // var saveBtn = $("<button>");
-    // //Assign attributes to button to apply CSS
-    // saveBtn.attr("type", "button");
-    // saveBtn.attr("class", "saveBtn btn btn-success");
-    // saveBtn.attr("id", "saveBtn");
-    // //Set text content of save button
-    // saveBtn.text("Save");
-    //Append save button to last column (which is already appended to the row)
+## Criteria
+### GIVEN I am using a daily planner to create a schedule
+### WHEN I open the planner THEN the current day is displayed at the top of the calendar
+![screenshot](../Work_Day_Scheduler/assets/date&time.png)
+* The time is displayed using moment
 
-//     $("#saveBtn").click(function(){
-//         console.log("clicked save button");
-//     });
-// }; 
-// var saveBtn = $('<button/>')
+### WHEN I scroll down THEN I am presented with time blocks for standard business hours
+* hard coded in HTML
+### WHEN I view the time blocks for that day THEN each time block is color-coded to indicate whether it is in the past, present, or future
+* built using a for loop and varible from moment H which is the hours in military time
+![screenshot](../Work_Day_Scheduler/assets/colorcode.png)
 
-// saveBtn.attr("type", "button");
-// saveBtn.attr("class", "saveBtn btn btn-success");
-// saveBtn.attr("id", "saveBtn");
-//     //Set text content of save button
-// saveBtn.text("Save");
+### WHEN I click into a time block THEN I can enter an event
+* content editable in HTML divs
+
+### WHEN I click the save button for that time block THEN the text for that event is saved in local storage WHEN I refresh the page THEN the saved events persist
+* still working on this 
