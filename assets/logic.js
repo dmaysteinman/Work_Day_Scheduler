@@ -71,7 +71,7 @@ var myWorkDay = $("#timeblocks");
 
 //...
 
-var schedule = JSON.parse(localstorage.getItem("schedule")) || [];
+var schedule = [];
 
 // var storedNames = JSON.parse(localStorage.getItem("names"));
 
