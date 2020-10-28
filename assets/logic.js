@@ -25,6 +25,15 @@ let m = moment();
 currentDay.text(m.format("[Today is] MMM Do[,] YYYY"));
 let schedule = JSON.parse(localStorage.getItem("schedule")) || {};
 
+var pageStart = function(){
+  for (let i=8; i<=18; i++) {
+  if (i in schedule) {
+    $(`#content-${i}`).text(schedule[i]);
+  }
+  // "key" in obj
+  
+}}
+
 var currentTime = $("#currentTime");
 currentTime.text(m.format("[The time is] h:mm:ss a"));
 var update = function() {
@@ -32,24 +41,18 @@ var update = function() {
     // console.log(timeNow);
     document.getElementById("currentTime")
     .innerHTML = moment().format("[The time is] h:mm:ss a");
-    for (let i=8; i<=18; i++) {
-      if (i in schedule) {
-        $(`#content-${i}`).text(schedule[i]);
-      }
-      // "key" in obj
-      if (i < timeNow) {
-        $(`#${i}`).removeClass("blue");
-        $(`#${i}`).removeClass("green");
-        $(`#${i}`).addClass("red");
-      } else if (i==timeNow) {
-        $(`#${i}`).removeClass("red");
-        $(`#${i}`).removeClass("green");
-        $(`#${i}`).addClass("blue");
-      } else {
-        $(`#${i}`).removeClass("red");
-        $(`#${i}`).removeClass("blue");
-        $(`#${i}`).addClass("green");
-      }
+    if (i < timeNow) {
+      $(`#${i}`).removeClass("blue");
+      $(`#${i}`).removeClass("green");
+      $(`#${i}`).addClass("red");
+    } else if (i==timeNow) {
+      $(`#${i}`).removeClass("red");
+      $(`#${i}`).removeClass("green");
+      $(`#${i}`).addClass("blue");
+    } else {
+      $(`#${i}`).removeClass("red");
+      $(`#${i}`).removeClass("blue");
+      $(`#${i}`).addClass("green");
     }
 };
 setInterval(update, 1000);
