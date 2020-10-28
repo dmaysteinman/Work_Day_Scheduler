@@ -34,7 +34,7 @@ var update = function() {
     .innerHTML = moment().format("[The time is] h:mm:ss a");
     for (let i=8; i<=18; i++) {
       if (i in schedule) {
-        $(`#content-${i}`)
+        $(`#content-${i}`).text(schedule[i]);
       }
       // "key" in obj
       if (i < timeNow) {
