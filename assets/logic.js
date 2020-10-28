@@ -23,6 +23,7 @@
 var currentDay = $("#currentDay");
 let m = moment();
 currentDay.text(m.format("[Today is] MMM Do[,] YYYY"));
+let schedule = JSON.parse(localStorage.getItem("schedule")) || {};
 
 var currentTime = $("#currentTime");
 currentTime.text(m.format("[The time is] h:mm:ss a"));
@@ -32,6 +33,10 @@ var update = function() {
     document.getElementById("currentTime")
     .innerHTML = moment().format("[The time is] h:mm:ss a");
     for (let i=8; i<=18; i++) {
+      if (i in schedule) {
+        $(`#content-${i}`)
+      }
+      // "key" in obj
       if (i < timeNow) {
         $(`#${i}`).removeClass("blue");
         $(`#${i}`).removeClass("green");
@@ -49,8 +54,8 @@ var update = function() {
 };
 setInterval(update, 1000);
 
-var container = $(".container");
-var myWorkDay = $("#timeblocks");
+// var container = $(".container");
+// var myWorkDay = $("#timeblocks");
 
 
 //STEP: create time blocks 
@@ -71,7 +76,6 @@ var myWorkDay = $("#timeblocks");
 
 //...
 
-var schedule = [];
 
 // var storedNames = JSON.parse(localStorage.getItem("names"));
 
@@ -79,7 +83,7 @@ $(".saveBtn").click(function(event){
   console.log("id = ",event.currentTarget.id);
   let content = $(event.currentTarget).parent().parent().children()[1].innerHTML;
   console.log(content)
-  let index = parseInt(event.currentTarget.id)-8;
+  let index = parseInt(event.currentTarget.id);
   console.log(index);
   schedule[index]=content;
   localStorage.setItem("schedule",JSON.stringify(schedule));
@@ -98,7 +102,7 @@ function init() {
   schedule = JSON.parse(localStorage.getItem("schedule"))
   console.log("schedule = " + schedule)
   for (let i=8; i<=18; i++) {
-    ;
+    $(`#${i} > .col-6`).text( content );
   }
 }
-$(init);
+// $(init);
