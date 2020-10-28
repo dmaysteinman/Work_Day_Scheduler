@@ -41,7 +41,7 @@ var update = function() {
         $(`#${i}`).removeClass("blue");
         $(`#${i}`).removeClass("green");
         $(`#${i}`).addClass("red");
-      } else if (i=timeNow) {
+      } else if (i==timeNow) {
         $(`#${i}`).removeClass("red");
         $(`#${i}`).removeClass("green");
         $(`#${i}`).addClass("blue");
