@@ -29,11 +29,10 @@ body {
 }
 
 .saveBtn {
-  position: absolute;
   background-color: #093641;
   color: white;
-  margin-left: 80px;
 }
+
 .col-3 {
   margin-top: 30px;
   font-size: large;

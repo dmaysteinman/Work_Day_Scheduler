@@ -18,20 +18,29 @@
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
+
+
 var currentDay = $("#currentDay");
 let m = moment();
 currentDay.text(m.format("[Today is] MMM Do[,] YYYY"));
 let schedule = JSON.parse(localStorage.getItem("schedule")) || {};
+let timeNow = moment().format("H");
+
 
 var currentTime = $("#currentTime");
 currentTime.text(m.format("[The time is] h:mm:ss a"));
 var update = function () {
-  let timeNow = moment().format("H");
+    
   // console.log(timeNow);
   document.getElementById("currentTime").innerHTML = moment().format(
     "[The time is] h:mm:ss a"
   );
 
+  
+};
+setInterval(update, 1000);
+
+var pageStart = function() {
   for (let i = 8; i <= 18; i++) {
     if (i in schedule) {
       $(`#content-${i}`).text(schedule[i]);
@@ -52,9 +61,9 @@ var update = function () {
     }
   }
 };
-setInterval(update, 1000);
+pageStart()
 
-var pageStart = function () {};
+
 
 // var container = $(".container");
 // var myWorkDay = $("#timeblocks");
